@@ -1,0 +1,964 @@
+@import url(nullstyle.css);
+
+/* GLOBAL */
+
+body {
+  font-family: "Jost", sans-serif;
+  font-size: 18px;
+  line-height: 160%;
+  font-weight: 400;
+  color: #141024;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.header,
+.footer {
+  background-color: #141024;
+  color: #fff;
+  padding: 30px;
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex: 0 0 auto;
+}
+
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.btn {
+  color: #fff;
+  background-color: #d52027;
+  width: 260px;
+  height: 59px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  transform: scale(0.97);
+  transition: all 0.3s ease-in-out 0.3s;
+}
+
+.btn:active {
+  opacity: 0.8;
+  transform: scale(0.95);
+}
+
+/* HEADER */
+
+.header__inner {
+  max-width: 1720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.header__inner-img {
+  display: flex;
+}
+
+.phone,
+.logo {
+  color: #fff;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.menu__list {
+  display: flex;
+  gap: 40px;
+}
+
+.menu__list-item {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.menu__list-item:hover {
+  transition: all 0.2s ease-in-out 0.2s;
+  opacity: 0.8;
+}
+
+.menu__list-item:active {
+  transform: scale(0.98);
+  color: #d52027;
+}
+
+.menu-btn {
+  display: none;
+}
+
+.menu__close {
+  display: none;
+}
+
+.menu__inner {
+  align-items: center;
+}
+
+.phone__img {
+  display: none;
+}
+
+/* FOOTER */
+
+.footer__inner {
+  max-width: 1720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__text {
+  font-size: 16px;
+  color: #fff;
+  opacity: 0.7;
+}
+
+/* MAIN */
+
+.top__inner {
+  background-color: #141024;
+  color: #fff;
+  padding-top: 55px;
+}
+
+.top__inner-container {
+  max-width: 1494px;
+  margin: 0 auto;
+}
+
+.top__contant {
+  display: flex;
+  justify-content: space-between;
+}
+
+.top__contant-text {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-left: 167px;
+}
+
+.top__title {
+  font-size: 70px;
+  font-weight: 600;
+  width: 516px;
+  margin-top: 180px;
+}
+
+.top__text {
+  font-size: 20px;
+  max-width: 478px;
+}
+
+.top__img {
+  max-width: 783px;
+  width: 100%;
+  height: auto;
+}
+
+.about {
+  margin: 120px 0;
+}
+.about__text {
+  font-size: 30px;
+  max-width: 891px;
+  line-height: 160%;
+  margin-bottom: 60px;
+}
+
+.advantages {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.advantages__items {
+  max-width: 260px;
+}
+
+.advantages__item {
+  font-size: 70px;
+  font-weight: 600;
+  color: #d52027;
+  line-height: 160%;
+}
+
+.advantages__item-text {
+  opacity: 0.7;
+}
+
+.after-course__inner {
+  background-color: #f9f9f9;
+  padding: 100px 0;
+}
+
+.after-course__title {
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 160%;
+  margin-bottom: 60px;
+}
+
+.after-course__items {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.after-course__item-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.after-course__item-text {
+  opacity: 0.7;
+  max-width: 360px;
+}
+
+.after-course__info {
+  display: flex;
+  gap: 10px;
+}
+
+.after-course__img-info {
+  width: 24px;
+  height: 24px;
+
+  position: relative;
+  bottom: 5px;
+}
+
+[data-tooltip] {
+  position: relative;
+  font-size: 16px;
+}
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  width: 260px; /* Ширина подсказки */
+  left: 0;
+  top: 0px; /* Положение подсказки */
+  border-radius: 5px;
+  background: #fff; /* Синий цвет фона */
+  color: #141024; /* Цвет текста */
+  padding: 15px 20px; /* Поля вокруг текста */
+  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2); /* Параметры тени */
+  pointer-events: none; /* Подсказка */
+  opacity: 0; /* Подсказка невидима */
+  transition: 1s; /* Время появления подсказки */
+}
+[data-tooltip]:hover::after {
+  opacity: 1; /* Показываем подсказку */
+  top: -80px; /* Положение подсказки */
+}
+
+.coaches__title {
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 160%;
+  margin: 120px 0 60px;
+}
+
+.swiper {
+  max-width: 1160px;
+  max-height: auto;
+  padding: 0 10px;
+}
+
+.swiper-horizontal > .swiper-scrollbar,
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+  width: calc(100% - 5 * var(--swiper-scrollbar-sides-offset, 15%));
+}
+
+:root {
+  --swiper-navigation-size: 15px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: #141024;
+  color: #fff;
+  padding: 15px;
+  border-radius: 50px;
+}
+
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+  left: var(--swiper-navigation-sides-offset, 1050px);
+  top: 100px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  top: var(--swiper-navigation-top-offset, 94%);
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+}
+
+.coaches__item {
+  max-width: 360px;
+}
+
+.coach__img {
+  width: 360px;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.coach__name {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.coach__text {
+  opacity: 0.7;
+  margin-bottom: 20px;
+}
+
+.coach__more {
+  background-color: inherit;
+  color: #d52027;
+  margin-bottom: 70px;
+  display: block;
+}
+
+.coach__more:hover {
+  transition: all 0.2s ease-in-out 0.2s;
+  opacity: 0.7;
+  transform: scale(0.99);
+}
+
+.coach__more:active {
+  color: #141024;
+  transform: scale(0.97);
+}
+
+.buy__title {
+  margin: 120px 0 60px;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.buy__cards {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 120px;
+}
+
+.buy__card {
+  border: 1px solid rgba(20, 16, 36, 0.2);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  max-width: 360px;
+}
+
+.buy__card-title,
+.buy__card-price {
+  font-weight: 600;
+  line-height: 160%;
+}
+.buy__card-title {
+  font-size: 30px;
+  margin-bottom: 63px;
+}
+
+.buy__card-price {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.buy__card-text {
+  margin-bottom: 60px;
+}
+
+.buy__card_pro {
+  background-color: #141024;
+  color: #fff;
+}
+
+.buy__card_pro > .buy__card-title {
+  margin-bottom: 83px;
+}
+
+.form__inner {
+  background-color: #d52027;
+  background-image: url(/images/form-bg.png);
+}
+
+.form__contant {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  color: #fff;
+  padding: 87px 0;
+}
+
+.form__contant-title {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 130%;
+  margin: 20px 0;
+}
+
+.form__contant-text {
+  font-size: 20px;
+  max-width: 478px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  gap: 10px;
+}
+
+.form__btn {
+  background-color: #141024;
+  max-width: 500px;
+  width: 100%;
+}
+
+input {
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/* POPUP */
+
+.popup__bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s all;
+  z-index: 10;
+}
+
+.popup__bg.active {
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.5s all;
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: #fff;
+  width: 400px;
+  padding: 40px;
+  transition: 0.5s all;
+}
+
+.popup.active {
+  transform: translate(-50%, -50%) scale(1);
+  transition: 0.5s all;
+  max-width: 940px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.popup__info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.popup__coach {
+  display: flex;
+  gap: 40px;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.popup__coach-name {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 160%;
+  margin-bottom: 10px;
+}
+
+.popup__coach-work {
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+
+.popup__img {
+  cursor: pointer;
+}
+
+.popup__list {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.popup__list-item {
+  max-width: 250px;
+  width: 100%;
+  text-align: left;
+  font-size: 20px;
+}
+
+.popup__list-item:hover {
+  opacity: 0.5;
+  transition: all 0.2s ease-in-out 0.2s;
+}
+
+.popup__list-item:active {
+  color: #d52027;
+  opacity: 1;
+}
+
+.line {
+  border-bottom: 1px solid rgba(20, 16, 36, 0.25);
+}
+
+.popup__swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.popup__swiper-slide {
+  font-size: 18px;
+  height: auto;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 30px;
+}
+
+/* MEDIA */
+
+@media (max-width: 1600px) {
+  .top__img {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .top__img {
+    max-width: 500px;
+  }
+  .top__title {
+    margin-top: 100px;
+    width: 400px;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 1200px) {
+  .top__contant-text {
+    margin-left: 50px;
+  }
+  .top__img {
+    max-width: 450px;
+  }
+  .top__title {
+    margin-top: 80px;
+  }
+  .menu-btn {
+    display: block;
+  }
+  .header__inner-img {
+    display: flex;
+    gap: 20px;
+  }
+  .phone {
+    display: none;
+  }
+  .phone__img {
+    display: block;
+  }
+  .menu-btn:hover {
+    transform: scale(1.2);
+    transition: all 0.3s ease-in-out 0.3s;
+  }
+  .phone__img:hover {
+    transform: scale(1.2);
+    transition: all 0.3s ease-in-out 0.3s;
+  }
+  .coaches__item,
+  .coaches__item img {
+    max-width: 300px;
+  }
+
+  .menu__open {
+    display: flex;
+    background-color: transparent;
+    z-index: 20;
+  }
+  .menu__close--active {
+    display: block;
+    background: transparent;
+    position: absolute;
+
+    top: 30px;
+    right: 30px;
+    z-index: 40;
+  }
+  .menu__inner {
+    position: absolute;
+    z-index: 30;
+    background-color: #141024;
+    color: #fff;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+
+    transform: translateY(-100%);
+    transition: transform 0.5s ease;
+  }
+  .menu__inner.menu__list--active {
+    transform: translateY(0%);
+  }
+  .menu__list {
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+    gap: 20px;
+
+    margin-top: 35vh;
+  }
+  .menu__list-item {
+    font-size: 30px;
+    line-height: 160%;
+  }
+  .swiper {
+    max-width: 1000px;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+  .buy__cards {
+    flex-direction: column;
+  }
+  .advantages {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+  .advantages__items {
+    text-align: center;
+  }
+  .footer__phone {
+    display: block;
+  }
+}
+
+@media (max-width: 1000px) {
+  .coaches__item img {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 900px) {
+  .top__contant-text {
+    margin-left: 15px;
+  }
+  .top__title {
+    font-size: 60px;
+    margin-top: 50px;
+  }
+  .top__text,
+  .top__img {
+    max-width: 400px;
+  }
+  .about__text {
+    font-size: 25px;
+    line-height: 160%;
+  }
+  .advantages__item {
+    font-size: 60px;
+    line-height: 150%;
+  }
+  .after-course__title,
+  .coaches__title,
+  .buy__title {
+    font-size: 40px;
+  }
+  .coaches__title,
+  .buy__title {
+    margin: 80px 0 40px;
+  }
+  .about {
+    margin: 80px 0;
+  }
+  .after-course__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .buy__card {
+    padding: 30px;
+  }
+  .buy__cards {
+    margin-bottom: 80px;
+  }
+  form {
+    max-width: 400px;
+  }
+  .form__contant-title {
+    font-size: 30px;
+    line-height: 130%;
+  }
+}
+
+@media (max-width: 800px) {
+  .top__inner {
+    padding-top: 40px;
+  }
+  .top__contant {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    gap: 30px;
+    position: relative;
+  }
+  .top__contant-text {
+    align-items: center;
+    gap: 30px;
+  }
+  .top__title {
+    margin-top: 0;
+    width: 600px;
+  }
+  .top__btn {
+    margin: 300px auto 80px;
+    z-index: 10;
+  }
+  .top__img {
+    max-width: 300px;
+
+    position: absolute;
+    top: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+    line-height: 160%;
+  }
+  .top__inner {
+    padding: 10px;
+  }
+  .logo {
+    font-size: 18px;
+  }
+  .top__title {
+    font-size: 30px;
+    line-height: 160%;
+  }
+  .top__contant-text {
+    gap: 10px;
+    margin-left: 0;
+  }
+  .top__img {
+    max-width: 273px;
+    top: 150px;
+  }
+  .top__btn {
+    margin: 270px auto 40px;
+  }
+
+  .advantages, .after-course__items {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about {
+    margin: 60px 0;
+  }
+  .about__text {
+    font-size: 20px;
+    line-height: 160%;
+    margin-bottom: 40px;
+  }
+
+  .after-course__inner {
+    padding: 40px 0;
+  }
+  .after-course__title,
+  .coaches__title,
+  .buy__title {
+    font-size: 30px;
+    line-height: 140%;
+    text-align: center;
+  }
+  .after-course__title {
+    margin-bottom: 40px;
+  }
+  .after-course__info {
+    justify-content: center;
+  }
+  .after-course__item-title_info {
+    margin-left: 34px;
+  }
+  .coaches__title,
+  .buy__title {
+    margin: 60px 0 40px;
+  }
+  .buy__card {
+    max-width: 300px;
+  }
+  .buy__card-price {
+    font-size: 50px;
+  }
+  [data-tooltip]:hover::after {
+    opacity: 1;
+    top: -80px;
+    left: -30vw;
+}
+.coaches__item img {
+  max-width: 220px;
+}
+
+.form__contant {
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px 0;
+}
+.form__contant-text {
+  font-size: 16px;
+}
+.form__contant-text p {
+  max-width: 250px;
+  margin: 0 auto;
+}
+.footer__inner {
+  flex-direction: column;
+  text-align: center;
+  gap: 30px;
+}
+.footer__phone {
+  font-size: 16px;
+}
+.footer__text {
+  font-size: 14px;
+}
+
+.popup {
+  padding: 30px 20px;
+}
+.popup.active {
+  width: 95%;
+}
+.close-popup__btn {
+  display: none;
+}
+.close-popup {
+  position: absolute;
+	top: 30px;
+	right: 20px;
+	width: 20px;
+	height: 20px;
+	opacity: 0.5;
+	cursor: pointer;
+  transition: opacity ease 0.5s;
+}
+.close-popup:hover {
+  opacity: 1;
+}
+.close-popup::before, .close-popup::after {
+  content: '';
+	position: absolute;
+	top: 10px;
+	display: block;
+	width: 20px;
+	height: 3px;
+	background: #141024;
+}
+.close-popup::before {
+  transform: rotate(45deg);
+}
+.close-popup::after {
+  transform: rotate(-45deg);
+}
+
+.popup__info {
+  flex-direction: column-reverse;
+}
+.popup__coach {
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.popup__coach-img {
+  width: 60px;
+  height: 88px;
+  object-fit: cover;
+}
+.popup__coach-name {
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+.popup__coach-work {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+.popup__list {
+  display: none;
+}
+.popup__list-item {
+  font-size: 14px;
+}
+
+}
+
+@media (max-width: 400px) {
+  .top__text {
+    max-width: 300px;
+  }
+  [data-tooltip]:hover::after {
+    width: 200px;
+    top: -100px;
+}
+}
